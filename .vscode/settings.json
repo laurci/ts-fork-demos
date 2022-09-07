@@ -1,0 +1,4 @@
+{
+    "typescript.tsdk": "../TypeScript/built/local",
+    "typescript.enablePromptUseWorkspaceTsdk": true
+}
