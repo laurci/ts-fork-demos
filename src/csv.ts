@@ -12,6 +12,10 @@ export async function readCsv(p: string): Promise<Entry[]> {
     const file = openFile(p);
     defer await file.close();
 
+    defer if(data.length > 0) {
+        console.log("processed at least one line");
+    }
+
     const content = await file.read();
     const lines = content.split("\n");
 

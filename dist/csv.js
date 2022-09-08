@@ -33,7 +33,9 @@ function readCsv(p) {
         yield __defer();
         return data;
         function __defer() {
-            return __awaiter(this, void 0, void 0, function* () { console.log("processed", data.length, "entries"); yield file.close(); });
+            return __awaiter(this, void 0, void 0, function* () { console.log("processed", data.length, "entries"); yield file.close(); if (data.length > 0) {
+                console.log("processed at least one line");
+            } });
         }
     });
 }
