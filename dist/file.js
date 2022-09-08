@@ -9,11 +9,33 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const csv_1 = require("./csv");
-function main() {
-    return __awaiter(this, void 0, void 0, function* () {
-        console.log("test.csv entries", yield (0, csv_1.readCsv)("test.csv"));
-        console.log("test2.csv entries", yield (0, csv_1.readCsv)("test2.csv"));
-    });
+exports.openFile = void 0;
+let openFileCount = 0;
+function checkOpenFiles() {
+    if (openFileCount > 0) {
+        console.log(`FAILED! ${openFileCount} files are still opened!`);
+    }
 }
-main();
+process.on("beforeExit", () => {
+    checkOpenFiles();
+});
+const text = `
+Romania,18000000
+Austria,9000000
+Spain,48000000
+`.trim();
+function openFile(fileName) {
+    console.log(`open file ${fileName}`);
+    openFileCount++;
+    return {
+        close() {
+            return __awaiter(this, void 0, void 0, function* () { console.log(`closed ${fileName}`); openFileCount--; });
+        },
+        read() {
+            return __awaiter(this, void 0, void 0, function* () {
+                return text;
+            });
+        },
+    };
+}
+exports.openFile = openFile;

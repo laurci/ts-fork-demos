@@ -1,8 +1,8 @@
-function shit(x: string) {}
+import {readCsv} from "./csv";
 
-const str = "123";
-
-crap {
-    console.log("shit");
-    shit(str);
+async function main() {
+    console.log("test.csv entries", await readCsv("test.csv"));
+    console.log("test2.csv entries", await readCsv("test2.csv"));
 }
+
+main();
