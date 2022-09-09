@@ -1,37 +1,41 @@
-import {openFile} from "./file";
+import {openFileSync} from "./file";
 
 export interface Entry {
     country: string;
     population: number;
 }
 
-export async function readCsv(p: string): Promise<Entry[]> {
+function process(entries: Entry[]): Entry[] {
+    return entries.filter(x => x.population > 10_000_000);
+}
+
+/**
+ * Input data format: /[A-Z][a-z]( )*+,( )*[0-9]+/
+ * Romania ,  19000000
+ */
+export function readCsv(p: string): Entry[] {
     let data: Entry[] = [];
-    defer console.log("processed", data.length, "entries");
+    defer data = process(data);
 
-    const file = openFile(p);
-    defer await file.close();
+    const file = openFileSync(p);
+    defer file.close();
 
-    defer if(data.length > 0) {
-        console.log("processed at least one line");
-    }
-
-    const content = await file.read();
+    const content = file.read();
     const lines = content.split("\n");
 
     for(let line of lines) {
-        const [country, populationString] = line.split(",");
-        const population = parseInt(populationString);
-        
+        const [country, populationStr] = line.split(",").map(x => x.trim());
+        const population = parseInt(populationStr);
+
         const item = {
             country,
             population
         };
 
-        if(item.population < 10_000_000) {
+        if(Math.random() > 0.5) {
             return data;
         }
-        
+
         data.push(item);
     }
 
