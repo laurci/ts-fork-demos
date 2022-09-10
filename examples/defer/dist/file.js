@@ -28,7 +28,10 @@ function openFileSync(fileName) {
     console.log(`open file ${fileName}`);
     openFileCount++;
     return {
-        close() { console.log(`closed ${fileName}`); openFileCount--; },
+        close() {
+            console.log(`closed ${fileName}`);
+            openFileCount--;
+        },
         read() {
             return text;
         },
@@ -48,7 +51,7 @@ function openFile(fileName) {
                 return __awaiter(this, void 0, void 0, function* () {
                     return file.read();
                 });
-            }
+            },
         };
     });
 }

@@ -1,12 +1,12 @@
-export type FileStream = { close(): void; read(): string};
+export type FileStream = {close(): void; read(): string};
 export type AsyncFileStream = {
     [key in keyof FileStream]: (...args: Parameters<FileStream[key]>) => Promise<ReturnType<FileStream[key]>>;
-}
+};
 
 let openFileCount = 0;
 
 function checkOpenFiles() {
-    if(openFileCount > 0) {
+    if (openFileCount > 0) {
         console.log(`FAILED! ${openFileCount} files are still opened!`);
     }
 }
@@ -26,7 +26,10 @@ export function openFileSync(fileName: string): FileStream {
     openFileCount++;
 
     return {
-        close() { console.log(`closed ${fileName}`); openFileCount--; },
+        close() {
+            console.log(`closed ${fileName}`);
+            openFileCount--;
+        },
         read() {
             return text;
         },
@@ -42,6 +45,6 @@ export async function openFile(fileName: string): Promise<AsyncFileStream> {
         },
         async read() {
             return file.read();
-        }
-    }
+        },
+    };
 }
