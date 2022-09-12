@@ -2,7 +2,8 @@
     "name": "ts-fork-demos",
     "private": true,
     "workspaces": [
-        "./examples/defer"
+        "./examples/defer",
+        "./examples/use"
     ],
     "scripts": {
         "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
