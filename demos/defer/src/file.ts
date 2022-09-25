@@ -15,11 +15,22 @@ process.on("beforeExit", () => {
     checkOpenFiles();
 });
 
-const text = `
+const testCsv = `
 Romania,19000000
 Austria, 9000000
 Spain,  48000000
 `.trim();
+
+const test2Csv = `
+China,1400000000
+India,1300000000
+USA,   330000000
+`.trim();
+
+const files = {
+    "test.csv": testCsv,
+    "test2.csv": test2Csv,
+} as Record<string, string>;
 
 export function openFileSync(fileName: string): FileStream {
     console.log(`open file ${fileName}`);
@@ -31,7 +42,7 @@ export function openFileSync(fileName: string): FileStream {
             openFileCount--;
         },
         read() {
-            return text;
+            return files[fileName]!;
         },
     };
 }
