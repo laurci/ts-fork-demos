@@ -6,7 +6,8 @@
         "./demos/macros",
         "./examples/defer",
         "./examples/use",
-        "./examples/macros"
+        "./examples/macros",
+        "./examples/gql"
     ],
     "scripts": {
         "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
