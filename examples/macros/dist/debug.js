@@ -11,22 +11,23 @@ function createSeparator(factory) {
     return factory.createStringLiteral((_c = (_b = (_a = config_1.default.macros) === null || _a === void 0 ? void 0 : _a.debug) === null || _b === void 0 ? void 0 : _b.separator) !== null && _c !== void 0 ? _c : "");
 }
  function debug(..._args) {
-    var _a, _b;
-    const { factory, sourceFile, result } = this;
-    const args = this.node.arguments;
-    if ((_b = (_a = config_1.default.macros) === null || _a === void 0 ? void 0 : _a.debug) === null || _b === void 0 ? void 0 : _b.disable) {
-        result.remove();
-        return;
-    }
-    result.replace((0, utils_1.createLog)(factory, "log", args.flatMap((arg, index) => {
-        const argInstance = (0, compiler_1.isStringLiteral)(arg) ? [arg] : [
-            factory.createStringLiteral(`${(0, utils_1.nodeText)(arg, sourceFile)} =`),
-            arg
-        ];
-        if (index > 0) {
-            return [createSeparator(factory), ...argInstance];
+    this.transform(({ node, factory, sourceFile }) => {
+        var _a, _b;
+        const args = node.arguments;
+        if ((_b = (_a = config_1.default.macros) === null || _a === void 0 ? void 0 : _a.debug) === null || _b === void 0 ? void 0 : _b.disable) {
+            return node.remove();
         }
-        return argInstance;
-    })));
+        const log = (0, utils_1.createLog)(factory, "log", args.flatMap((arg, index) => {
+            const argInstance = (0, compiler_1.isStringLiteral)(arg) ? [arg] : [
+                factory.createStringLiteral(`${(0, utils_1.nodeText)(arg, sourceFile)} =`),
+                arg
+            ];
+            if (index > 0) {
+                return [createSeparator(factory), ...argInstance];
+            }
+            return argInstance;
+        }));
+        node.replace(log);
+    });
 }
 exports.debug = debug;

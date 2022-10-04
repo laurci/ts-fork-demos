@@ -1,4 +1,13 @@
-
-interface GQL<T> {
-    x: T;
+interface GQLQueryDefinition<T> {
+    query: T;
 };
+
+interface GQLMutationDefinition<T> {
+    mutation: T;
+};
+
+
+interface GQLFragmentDefinition<T> {
+    fragment: T;
+};
+

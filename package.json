@@ -4,6 +4,7 @@
     "workspaces": [
         "./demos/defer",
         "./demos/macros",
+        "./demos/showcase",
         "./examples/defer",
         "./examples/use",
         "./examples/macros",

@@ -1,11 +1,18 @@
-function gql(...args: any): any {
+import "./globals";
 
-};
+import client from "./client";
+import {gql} from "./gql";
 
-function main() {
-    const x = gql`hello`;
+async function main() {
+    const {data} = await client.fetch(gql!`    
+        query {
+            capsules {
+                id,
+                landings
+            }
+        }
+    `);
 
-    console.log("hi!");
 }
 
 main();
