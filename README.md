@@ -16,7 +16,7 @@ There are 4 scripts in this project. You must run them in the root of this repos
 1. `compile`: Will run `tsc` with specified sample. Ex: `yarn compile examples/defer`.
 2. `clean`: Will clean the compile output of a specified sample. Ex: `yarn clean examples/defer`.
 3. `build`: Runs both of the above. Ex: `yarn build examples/defer`.
-4. `run`: Builds and runs a specified sample. Ex: `yarn run examples/defer`. You can also skip building or cleaning with `--no-rebuild` and `--no-clean` flags.
+4. `start`: Builds and runs a specified sample. Ex: `yarn start examples/defer`. You can also skip building or cleaning with `--no-rebuild` and `--no-clean` flags.
 
 ## Syntax and Language Service
 
