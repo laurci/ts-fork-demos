@@ -8,8 +8,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+Object.defineProperty(exports, "__esModule", { value: true });
+const csv_1 = require("./csv");
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
+        console.log("test.csv entries", yield (0, csv_1.readCsv)("test.csv"));
+        console.log("test2.csv entries", yield (0, csv_1.readCsv)("test2.csv"));
     });
 }
 main();
