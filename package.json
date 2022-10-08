@@ -8,7 +8,8 @@
         "./examples/defer",
         "./examples/use",
         "./examples/macros",
-        "./examples/gql"
+        "./examples/gql",
+        "./examples/derive"
     ],
     "scripts": {
         "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
@@ -20,7 +21,6 @@
     "devDependencies": {
         "@types/node": "^18.7.16",
         "prettier": "^2.7.1",
-        "shelljs": "^0.8.5",
-        "@types/compiler": "link:../TypeScript/types/compiler"
+        "shelljs": "^0.8.5"
     }
 }
