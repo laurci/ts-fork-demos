@@ -1,8 +1,6 @@
 import {Hello} from "./hello";
 
-interface X { };
-
-class Dog derives X, Hello {
+class Dog derives Hello {
     bark() {
         console.log("hi!");
     }

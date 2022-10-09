@@ -1,4 +1,4 @@
-import {ClassDeclaration, ClassElement, DeriveMacro, isIdentifier, NodeFactory} from "compiler";
+import {ClassDeclaration, ClassElement, DeriveMacro, findAncestor, isIdentifier, NodeFactory} from "compiler";
 
 export interface Hello {
     hello(): string;
