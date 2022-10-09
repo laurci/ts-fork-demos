@@ -1,7 +1,7 @@
 import {ClassDeclaration, ClassElement, DeriveMacro, findAncestor, isIdentifier, NodeFactory} from "compiler";
 
 export interface Hello {
-    hello(): string;
+    hello(): void;
 };
 
 function appendElementsToClass(factory: NodeFactory, classDecl: ClassDeclaration, ...els: ClassElement[]) {
