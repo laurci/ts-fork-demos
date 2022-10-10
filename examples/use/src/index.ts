@@ -1,7 +1,7 @@
-declare function hello(): void;
+declare function debug(): void;
 
 async function main() {
-    use [hello()] {
+    use [debug()] {
     }
 }
 
