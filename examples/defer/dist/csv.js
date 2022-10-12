@@ -10,28 +10,32 @@ function process(entries) {
  * Romania ,  19000000
  */
 function readCsv(p) {
-    let data = [];
-    const file = (0, file_1.openFileSync)(p);
-    const content = file.read();
-    const lines = content.split("\n");
-    for (let line of lines) {
-        const [country, populationStr] = line.split(",").map(x => x.trim());
-        const population = parseInt(populationStr);
-        const item = {
-            country,
-            population
-        };
-        if (Math.random() > 0.5) {
-            __defer();
-            return data;
+    const __defer = [];
+    try {
+        let data = [];
+        __defer.push(() => { data = process(data); })
+        const file = (0, file_1.openFileSync)(p);
+        __defer.push(() => { file.close(); })
+        const content = file.read();
+        const lines = content.split("\n");
+        for (let line of lines) {
+            const [country, populationStr] = line.split(",").map(x => x.trim());
+            const population = parseInt(populationStr);
+            const item = {
+                country,
+                population
+            };
+            if (Math.random() > 0.5) {
+                return data;
+            }
+            data.push(item);
         }
-        data.push(item);
+        return data;
     }
-    __defer();
-    return data;
-    function __defer() {
-        data = process(data);
-        file.close();
+    finally {
+        for (let __defer_fun of __defer) {
+            __defer_fun();
+        }
     }
 }
 exports.readCsv = readCsv;
