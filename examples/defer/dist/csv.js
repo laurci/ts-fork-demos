@@ -18,6 +18,11 @@ function readCsv(p) {
         __defer.push(() => { file.close(); })
         const content = file.read();
         const lines = content.split("\n");
+        __defer.push(() => { {
+            if (data.length < 3) {
+                throw new Error("incorrect data");
+            }
+        } })
         for (let line of lines) {
             const [country, populationStr] = line.split(",").map(x => x.trim());
             const population = parseInt(populationStr);
