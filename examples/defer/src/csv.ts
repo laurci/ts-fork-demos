@@ -29,6 +29,7 @@ export function readCsv(p: string): Entry[] {
         }
     }
 
+
     for(let line of lines) {
         const [country, populationStr] = line.split(",").map(x => x.trim());
         const population = parseInt(populationStr);
