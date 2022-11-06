@@ -1,0 +1,7 @@
+{
+    "compilerOptions": {
+        "buildConfig": {
+            "test": 123
+        }
+    }
+}

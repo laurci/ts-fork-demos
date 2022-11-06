@@ -1,4 +1,4 @@
-import {DeriveMacro} from "compiler";
+import {DeriveMacro, getBuildConfig} from "compiler";
 
 function notImplemented() {
     return new Error("Not implemented");
@@ -26,5 +26,7 @@ export abstract class Model<T = any> {
 export macro function deriveModel(this: DeriveMacro<Model>) {
     this.transform(({node}) => {
         console.log("transforming", node.name?.escapedText);
+        const config = getBuildConfig();
+        console.log(config);
     });
 }

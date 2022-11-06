@@ -7,4 +7,5 @@ const {sampleName} = bootstrap("build");
 
 loadSample(sampleName);
 cleanDist();
-runTsc();
+// runTsc();
+runTsc("--cfg a=abcd --cfg b=111 --cfg c=no --cfg d=true");

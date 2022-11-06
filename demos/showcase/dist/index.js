@@ -9,12 +9,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-class Test {
+class Test extends model_1.Repository {
 }
 function t() {
     return __awaiter(this, void 0, void 0, function* () {
         const test = new Test();
         const x = test.test();
+        const zz = Test.findOne("123");
+        zz.x;
     });
 }
 function main() {
