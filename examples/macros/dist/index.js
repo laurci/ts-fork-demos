@@ -4,6 +4,7 @@ require("./globals");
 function main() {
     const a = 5, b = 17;
     console.log("a =", a, "|", "b =", b, "|", "a + b =", a + b);
+    void 0;
     const x = __csv_create([
         {
             Country: "Romania",
