@@ -1,4 +1,3 @@
-import { contextualReturn } from "./contextual-return";
 import { typename } from "./typename";
 import { Model } from "./model";
 

@@ -1,8 +1,8 @@
-import {FunctionMacro, findAncestor, isFunctionDeclaration} from "compiler";
+import {FunctionMacro, isFunctionDeclaration, FunctionDeclaration} from "compiler";
 
 export macro function contextualReturn(this: FunctionMacro) {
-    this.check(({ node, checker, factory }) => {
-        const functionDeclaration = findAncestor(node, isFunctionDeclaration);
+    this.check(({ sourceFile, checker, factory }) => {
+        const functionDeclaration = sourceFile.statements.find(x => isFunctionDeclaration(x) && x.name?.escapedText == "data") as FunctionDeclaration | undefined;
         if(!functionDeclaration) return;
 
         const signature = checker.getSignatureFromDeclaration(functionDeclaration);
