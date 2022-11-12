@@ -71,3 +71,4 @@ function main() {
     return {};
 }
 main();
+console.log("Loading source file /home/sessions/tsf/demos/demos/showcase/src/index.ts");

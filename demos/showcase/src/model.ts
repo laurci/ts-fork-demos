@@ -24,9 +24,20 @@ export abstract class Model<T = any> {
 }
 
 export macro function deriveModel(this: DeriveMacro<Model>) {
-    this.transform(({node}) => {
+    this.transform(({node, factory, sourceFile}) => {
+        const callExpr = factory.createCallExpression(
+            factory.createPropertyAccessExpression(
+                factory.createIdentifier("console"),
+                "log"
+            ),
+            [],
+            [factory.createStringLiteral(`Loading source file ${sourceFile.fileName}`)]
+        );
+        sourceFile.appendStatement(factory.createExpressionStatement(callExpr));
+        
         console.log("transforming", node.name?.escapedText);
         const config = getBuildConfig();
         console.log(config);
     });
+    
 }
