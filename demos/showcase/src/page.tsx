@@ -1,7 +1,42 @@
 import {contextualReturn} from "./contextual-return";
 
 
-export function data() {
+function cfg(str: string) {
+
+}
+
+function onMount() {
+
+}
+
+function onUnmount() {
+
+}
+
+function onChange() {
+
+}
+
+function timer(name: string) {
+
+}
+
+using timer("data"):
+export async function data() {
+    using onMount(): {
+    
+    
+    }
+
+    using onChange(): {
+
+    }
+
+    using onUnmount(): {
+
+    }
+
+
     return {
         a: "abcd",
         c: "adsada",
