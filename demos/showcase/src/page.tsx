@@ -21,7 +21,6 @@ function timer(name: string) {
 
 }
 
-using timer("data"):
 export async function data() {
     using onMount(): {
     

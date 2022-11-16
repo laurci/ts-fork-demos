@@ -9,6 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.data = void 0;
 function cfg(str) {
 }
 function onMount() {
@@ -19,6 +20,22 @@ function onChange() {
 }
 function timer(name) {
 }
+function data() {
+    return __awaiter(this, void 0, void 0, function* () {
+        {
+        }
+        {
+        }
+        {
+        }
+        return {
+            a: "abcd",
+            c: "adsada",
+            e: 123
+        };
+    });
+}
+exports.data = data;
 function Page() {
     const pageData = ["/home/sessions/tsf/demos/demos/showcase/src/contextual-return.ts", "/home/sessions/tsf/demos/demos/showcase/src/typename.ts", "/home/sessions/tsf/demos/demos/showcase/src/model.ts", "/home/sessions/tsf/demos/demos/showcase/src/index.ts", "/home/sessions/tsf/demos/demos/showcase/src/page.tsx"];
 }
