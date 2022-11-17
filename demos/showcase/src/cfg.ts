@@ -13,9 +13,7 @@ export macro function cfg(this: UsingMacro, _name: string) {
 
         console.log("transforming cfg macro");
         if(!getBuildConfig()[name]) {
-            node.replace(
-                factory.createUseStatement(node.expressions, factory.createBlock([], true))
-            );
+            node.remove();
         }
     });
 }
