@@ -66,8 +66,7 @@ function t() {
     });
 }
 function main() {
-    // const x = contextualReturn!();
-    // console.log(typename!<typeof x>());
+    console.log("Vec2");
     return {};
 }
 main();

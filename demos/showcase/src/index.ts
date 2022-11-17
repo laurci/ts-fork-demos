@@ -87,9 +87,7 @@ async function t() {
 }
 
 function main(): User {
-    // const x = contextualReturn!();
-
-    // console.log(typename!<typeof x>());
+    console.log(typename!<typeof vec2>());
 
 
     return {} as any;
