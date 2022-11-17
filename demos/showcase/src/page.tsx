@@ -1,40 +1,10 @@
 import {contextualReturn} from "./contextual-return";
-
-
-function cfg(str: string) {
-
-}
-
-function onMount() {
-
-}
-
-function onUnmount() {
-
-}
-
-function onChange() {
-
-}
-
-function timer(name: string) {
-
-}
+import {cfg, timer} from "./cfg";
 
 export async function data() {
-    using onMount(): {
-    
-    
+    using [cfg!("something"), timer!("something stuff")]: {
+        console.log("this is emitted only if 'something' cfg is set");
     }
-
-    using onChange(): {
-
-    }
-
-    using onUnmount(): {
-
-    }
-
 
     return {
         a: "abcd",

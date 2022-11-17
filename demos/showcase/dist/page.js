@@ -10,23 +10,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.data = void 0;
-function cfg(str) {
-}
-function onMount() {
-}
-function onUnmount() {
-}
-function onChange() {
-}
-function timer(name) {
-}
 function data() {
     return __awaiter(this, void 0, void 0, function* () {
         {
-        }
-        {
-        }
-        {
+            console.time("something stuff");
+            console.log("this is emitted only if 'something' cfg is set");
+            console.timeEnd("something stuff");
         }
         return {
             a: "abcd",
@@ -37,6 +26,6 @@ function data() {
 }
 exports.data = data;
 function Page() {
-    const pageData = ["/home/sessions/tsf/demos/demos/showcase/src/contextual-return.ts", "/home/sessions/tsf/demos/demos/showcase/src/typename.ts", "/home/sessions/tsf/demos/demos/showcase/src/model.ts", "/home/sessions/tsf/demos/demos/showcase/src/index.ts", "/home/sessions/tsf/demos/demos/showcase/src/page.tsx"];
+    const pageData = ["/home/sessions/tsf/demos/demos/showcase/src/cfg.ts", "/home/sessions/tsf/demos/demos/showcase/src/contextual-return.ts", "/home/sessions/tsf/demos/demos/showcase/src/typename.ts", "/home/sessions/tsf/demos/demos/showcase/src/model.ts", "/home/sessions/tsf/demos/demos/showcase/src/index.ts", "/home/sessions/tsf/demos/demos/showcase/src/page.tsx"];
 }
 exports.default = Page;
