@@ -1,5 +1,6 @@
 import { typename } from "./typename";
 import { Model } from "./model";
+import {cfg, timer} from "./cfg";
 
 interface User {
     z: number
@@ -89,6 +90,9 @@ async function t() {
 function main(): User {
     console.log(typename!<typeof vec2>());
 
+    using cfg!("hello"): {
+
+    }
 
     return {} as any;
 }
