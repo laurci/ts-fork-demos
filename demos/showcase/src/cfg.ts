@@ -16,6 +16,13 @@ export macro function cfg(this: UsingMacro, _name: string) {
             node.remove();
         }
     });
+
+    this.check(({node, diagnostic}) => {
+        const firtArg = node.arguments[0];
+        if(!firtArg || !isStringLiteral(firtArg)) {
+            return diagnostic("error", "Expected string literal as first argument to cfg macro");
+        }
+    });
 }
 
 export macro function timer(this: UsingMacro, _name: string) {
