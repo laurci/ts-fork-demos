@@ -1,5 +1,9 @@
 import { typename } from "./typename";
 import { Model } from "./model";
+
+import "./script";
+
+
 interface User {
     z: number
 }

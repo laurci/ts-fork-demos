@@ -26,6 +26,6 @@ function data() {
 }
 exports.data = data;
 function Page() {
-    const pageData = ["/home/sessions/tsf/demos/demos/showcase/src/cfg.ts", "/home/sessions/tsf/demos/demos/showcase/src/contextual-return.ts", "/home/sessions/tsf/demos/demos/showcase/src/typename.ts", "/home/sessions/tsf/demos/demos/showcase/src/model.ts", "/home/sessions/tsf/demos/demos/showcase/src/index.ts", "/home/sessions/tsf/demos/demos/showcase/src/page.tsx"];
+    const pageData = ["/home/sessions/tsf/demos/demos/showcase/src/cfg.ts", "/home/sessions/tsf/demos/demos/showcase/src/contextual-return.ts", "/home/sessions/tsf/demos/demos/showcase/src/typename.ts", "/home/sessions/tsf/demos/demos/showcase/src/model.ts", "/home/sessions/tsf/demos/demos/showcase/src/script.ts", "/home/sessions/tsf/demos/demos/showcase/src/index.ts", "/home/sessions/tsf/demos/demos/showcase/src/page.tsx"];
 }
 exports.default = Page;
